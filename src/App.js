@@ -3,7 +3,7 @@ import React from 'react'
 // CSS IMPORTS
 import './App.css';
 // BIBLIOTECAS AUXILIARES IMPORT
-import Contador from './components/Contador'
+import Contador from './Components/Contador'
 
 // COMPONENTE
 const App = () => {

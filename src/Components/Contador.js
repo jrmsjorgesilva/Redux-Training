@@ -12,15 +12,15 @@ const Contador = () => {
   const [valor, setValor] = useState(0);
 
   const incrementaValor = () => {
-    setValor(valor + 1);
+    setValor(valor => valor + 1);
   }
 
   const decrementaValor = () => {
-    setValor(valor - 1);
+    setValor(valor => valor - 1);
   }
 
   const limpaValor = () => {
-    setValor(0);
+    setValor(valor => valor * 0);
   }
 
   return (
@@ -28,11 +28,11 @@ const Contador = () => {
       <h1 class='contador__link'>Contandu SA</h1>
       <button className='contador__btn' onClick={() => incrementaValor()}>
         Incrementar
-        <FaPlus />
+        <FaPlus style={{ margin: '0px 10px', fontSize: '26px', fonWeight: 'bolder' }} />
       </button>
       <button className='contador__btn' onClick={() => decrementaValor()}>
         Decrementar
-        <FaMinus />
+        <FaMinus style={{ margin: '0px 10px', fontSize: '26px', fonWeight: 'bolder' }} />
       </button>
       <h3>
         <FaTrash style={{ color: 'firebrick', margin: '-2px 10px', cursor: 'pointer' }} onClick={() => limpaValor()} />
