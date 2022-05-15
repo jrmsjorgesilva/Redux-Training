@@ -4,6 +4,8 @@ import React from 'react'
 import './App.css';
 // BIBLIOTECAS AUXILIARES IMPORT
 import Contador from './Components/Contador'
+import Calc from './Components/Calc'
+// IMPORTS DE RECURSOS DO REDUX
 import { createStore } from 'redux'
 import Reducer from './Redux/Reducer'
 import { Provider } from 'react-redux'
@@ -16,7 +18,8 @@ const App = () => {
   return (
     <div className="App">
       <Provider store={store} >
-        <Contador />
+        {/*<Contador />*/}
+        <Calc />
       </Provider>
     </div>
   );
