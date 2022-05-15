@@ -4,12 +4,12 @@ import React, { useState } from 'react'
 import './Calc.css'
 // BIBLIOTECAS AUXILIARES IMPORT
 import { FaEnvelope, FaCheck } from 'react-icons/fa'
+import { connect } from 'react-redux'
 
 // COMPONENTE
 const Calc = () => {
 
   // GERENCIAMENTO DE ESTADO VIA REDUX
-
   const [mail, setMail] = useState('seumelhor@email.com.br');
   const [mailSend, setMailSend] = useState(false);
 
@@ -18,7 +18,7 @@ const Calc = () => {
     setMail(mail => e.target.value);
   }
 
-  const printMail = (value) => {
+  const printMail = () => {
     if (mail === '' || mail === 'seumelhor@email.com.br') {
       return false
     }
@@ -36,11 +36,17 @@ const Calc = () => {
         <FaEnvelope
           style={{ color: 'lime', marginBottom: '-4px', fontSize: '22px' }}
         /> {mail}
-        {mailSend && <FaCheck style={{ color: 'lime', fontSize: '45px' }} />}
+        {mailSend && <FaCheck style={{ color: 'lime', fontSize: '35px', margin: '-10px 10px' }} />}
       </h3>
-      {mailSend && <small style={{ color: 'lime' }}>Email enviado com sucesso</small>}
+      {mailSend && <small style={{ color: 'lime' }}>Email cadastrado com sucesso</small>}
     </div>
   );
 }
 
-export default Calc
+const mapStateToProps = (state) => {
+  return {
+    mailSend: false
+  }
+}
+
+export default connect(mapStateToProps)(Calc);
