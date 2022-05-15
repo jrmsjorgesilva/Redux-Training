@@ -7,9 +7,9 @@ import { FaEnvelope, FaCheck } from 'react-icons/fa'
 import { connect } from 'react-redux'
 
 // COMPONENTE
-const Calc = () => {
+const Calc = (props) => {
 
-  // GERENCIAMENTO DE ESTADO VIA REDUX
+  // GERENCIAMENTO DE ESTADO VIA USESTATE
   const [mail, setMail] = useState('seumelhor@email.com.br');
   const [mailSend, setMailSend] = useState(false);
 
@@ -24,6 +24,22 @@ const Calc = () => {
     }
     setMailSend(mailSend => !mailSend);
   }
+
+  // GERENCIAMENTO DE ESTADO VIA REDUX
+
+  // const [mail, setMail] = useState('seumelhor@email.com.br');
+  //
+  // const typeMail = (e) => {
+  //   // printMail(e.target.value);
+  //   setMail(mail => e.target.value);
+  // }
+  //
+  // const printMail = () => {
+  //   if (mail === '' || mail === 'seumelhor@email.com.br') {
+  //     return false
+  //   }
+  //   props.dispatch({ type: 'MAIL_SEND' });
+  // }
 
   return (
     <div className="calc__container">
