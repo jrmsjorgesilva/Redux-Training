@@ -4,23 +4,38 @@ import React, { useState } from 'react'
 import './Contador.css'
 // BIBLIOTECAS AUXILIARES IMPORT
 import { FaPlus, FaMinus, FaTrash } from 'react-icons/fa'
+import { connect } from 'react-redux'
 
 // COMPONENTE
-const Contador = () => {
+const Contador = (props) => {
 
   // state
-  const [valor, setValor] = useState(0);
+  // const [valor, setValor] = useState(0);
+  //
+  // const incrementaValor = () => {
+  //   setValor(valor => valor + 1);
+  // }
+  //
+  // const decrementaValor = () => {
+  //   setValor(valor => valor - 1);
+  // }
+  //
+  // const limpaValor = () => {
+  //   setValor(valor => valor * 0);
+  // }
+
+  // GERENCIAMENTO DE ESTADO VIA REDUX
 
   const incrementaValor = () => {
-    setValor(valor => valor + 1);
+    props.dispatch({ type: 'INCREMENT_VALOR' });
   }
 
   const decrementaValor = () => {
-    setValor(valor => valor - 1);
+    props.dispatch({ type: 'DECREMENT_VALOR' });
   }
 
   const limpaValor = () => {
-    setValor(valor => valor * 0);
+    props.dispatch({ type: 'CLEAN_VALOR' });
   }
 
   return (
@@ -36,10 +51,17 @@ const Contador = () => {
       </button>
       <h3>
         <FaTrash style={{ color: 'firebrick', margin: '-2px 10px', cursor: 'pointer' }} onClick={() => limpaValor()} />
-        Valor: {valor}
+        Valor: {props.count}
       </h3>
     </div>
   );
 }
 
-export default Contador;
+function mapStateToProps(state) {
+  console.log(state.count)
+  return {
+    count: state.count
+  }
+}
+
+export default connect(mapStateToProps)(Contador);
