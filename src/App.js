@@ -6,6 +6,7 @@ import './App.css';
 import Contador from './Components/Contador'
 import Calc from './Components/Calc'
 import GroceryList from './Components/GroceryList'
+import Whatsapp from './Components/Whatsapp'
 // IMPORTS DE RECURSOS DO REDUX
 import { createStore } from 'redux'
 import Reducer from './Redux/Reducer'
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <div className="App">
       <Provider store={store} >
+        <Whatsapp />
         <GroceryList />
         <Contador />
         <Calc />
