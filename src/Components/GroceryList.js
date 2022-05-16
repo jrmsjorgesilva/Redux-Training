@@ -9,29 +9,30 @@ import GroceryListForm from './GroceryListForm'
 // COMPONENTE
 const GroceryList = () => {
 
-  const [groceryList, setGroceryList] = useState([
-    {
-      id: 1,
-      item: 'Bananas',
-      qtde: 2,
-      preco: 4.3,
-      desc: false
-    },
-    {
-      id: 2,
-      item: 'Beringela',
-      qtde: 2,
-      preco: 2.0,
-      desc: true
-    },
-    {
-      id: 3,
-      item: 'Suco',
-      qtde: 2,
-      preco: 3.0,
-      desc: false
-    }
-  ]);
+  const [groceryList, setGroceryList] = useState(JSON.parse(localStorage.getItem('groceryListComponent')));
+  // const [groceryList, setGroceryList] = useState([
+  //   {
+  //     id: 1,
+  //     item: 'Bananas',
+  //     qtde: 2,
+  //     preco: 4.3,
+  //     desc: false
+  //   },
+  //   {
+  //     id: 2,
+  //     item: 'Beringela',
+  //     qtde: 2,
+  //     preco: 2.0,
+  //     desc: true
+  //   },
+  //   {
+  //     id: 3,
+  //     item: 'Suco',
+  //     qtde: 2,
+  //     preco: 3.0,
+  //     desc: false
+  //   }
+  // ]);
 
   const [newGroceryList, setNewGroceryList] = useState({
     id: Math.floor(Math.random() * 10000),
@@ -56,6 +57,7 @@ const GroceryList = () => {
       preco: 0,
       desc: true
     });
+    localStorage.setItem('groceryListComponent', JSON.stringify(groceryList));
     // console.log(groceryList);
     // console.log(newGroceryList);
   }
