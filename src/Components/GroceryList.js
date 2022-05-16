@@ -33,42 +33,92 @@ const GroceryList = () => {
     }
   ]);
 
-  const [newGroceryList, setNewGroceryList] = useState('');
+  const [newGroceryList, setNewGroceryList] = useState({
+    id: 10000,
+    item: '',
+    qtde: 1,
+    preco: 0,
+    desc: true
+  });
 
   const addNewItem = (e) => {
     e.preventDefault();
-    // decalração -> gera novo id entre 10000 e 1 -> qtd -> preço -> desconto
-    const newID = Math.floor(Math.random() * 10000);
-    const newQTD = 5;
-    const newPreco = 67.7;
-    const newDesc = false;
-    // copia array para exibição
-    const newGroceryListObj = {
-      id: newID,
-      item: newGroceryList,
-      qtde: newQTD,
-      preco: newPreco,
-      desc: newDesc
-    };
-    const newGroceryListArray = [...groceryList, newGroceryListObj];
-    // seta novo estado para lista passando array atual junto com novo array
-    setGroceryList(newGroceryListArray);
+    // seta um id aleatorio
+    setNewGroceryList({ id: Math.floor(Math.random() * 10000) });
+    console.log(groceryList.id);
+    // joga os dados novos juntamente com o arrray existente
+    setGroceryList([...groceryList, newGroceryList]);
+    // limpa formulario
+    setNewGroceryList({
+      id: Math.floor(Math.random() * 10000),
+      item: '',
+      qtde: 1,
+      preco: 0,
+      desc: true
+    });
     // console.log(groceryList);
-    // console.log({newID, newGroceryList, newQTD, newPreco, newDesc});
+    // console.log(newGroceryList);
   }
+
+  // const addNewItem = (e) => {
+  //   e.preventDefault();
+  //   // decalração -> gera novo id entre 10000 e 1 -> qtd -> preço -> desconto
+  //   const newID = Math.floor(Math.random() * 10000);
+  //   const newQTD = 5;
+  //   const newPreco = 67.7;
+  //   const newDesc = false;
+  //   // copia array para exibição
+  //   const newGroceryListObj = {
+  //     id: newID,
+  //     item: newGroceryList,
+  //     qtde: newQTD,
+  //     preco: newPreco,
+  //     desc: newDesc
+  //   };
+  //   const newGroceryListArray = [...groceryList, newGroceryListObj];
+  //   // seta novo estado para lista passando array atual junto com novo array
+  //   setGroceryList(newGroceryListArray);
+  //   // console.log(groceryList);
+  //   // console.log({newID, newGroceryList, newQTD, newPreco, newDesc});
+  // }
 
   return (
     <div className="groceryList__container">
       <h1 className='groceryList__link'>Lista de Compras</h1>
       <form className='form-control' >
+        <div className='container'>
+          <label>QTDE </label>
+          <input
+            className='groceryList__input groceryList__description'
+            type='number'
+            placeholder='1'
+            value={newGroceryList.qtde}
+            onChange={(e) => setNewGroceryList({ ...newGroceryList, qtde: e.target.value })}
+          />
+          <label>R$ </label>
+          <input
+            className='groceryList__input groceryList__description'
+            type='number'
+            placeholder='0,00'
+            value={newGroceryList.preco}
+            onChange={(e) => setNewGroceryList({ ...newGroceryList, preco: e.target.value })}
+            required
+          />
+          <input
+            className='groceryList__input groceryList__description'
+            type='checkbox'
+            value={newGroceryList.desc}
+            onChange={(e) => setNewGroceryList({ ...newGroceryList, desc: e.target.value })}
+          />
+        </div>
         <input
           className='groceryList__input'
           autofocus
-          type='Adicionar'
+          type='text'
           id='Adicionar'
-          placeholder='adicionar'
-          value={newGroceryList}
-          onChange={(e) => setNewGroceryList(e.target.value)}
+          placeholder='Adicionar item'
+          value={newGroceryList.item}
+          onChange={(e) => setNewGroceryList({ ...newGroceryList, item: e.target.value })}
           required
         />
         <button className='groceryList__btn' onClick={(e) => addNewItem(e)}>

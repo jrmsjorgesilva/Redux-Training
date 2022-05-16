@@ -18,8 +18,13 @@
   font-weight: bold;
   background-color: lime;
   border: none;
+  border-radius: 3px;
   box-shadow: rgba(234, 244, 255, .2);
   cursor: pointer;
+}
+
+.form-control {
+  outline: none;
 }
 
 .groceryList__input {
@@ -30,6 +35,11 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+}
+
+.groceryList__description {
+  max-width: 100px;
+  outline: none;
 }
 
 .groceryList__btn:focus,
