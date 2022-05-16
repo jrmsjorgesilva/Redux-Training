@@ -61,7 +61,8 @@ const Calc = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    mailSend: false
+    // mailSend: false
+    mailSend: !state.mailSend
   }
 }
 

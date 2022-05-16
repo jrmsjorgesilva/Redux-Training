@@ -1,0 +1,39 @@
+.groceryList__container {
+  text-align: center;
+  width: 100%;
+  margin: 80px 0px;
+}
+
+.groceryList__link {
+  font-family: fantasy;
+  color: #61dafb;
+}
+
+.groceryList__btn {
+  padding: 15px 10px;
+  margin: 10px auto;
+  max-width: 300px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: lime;
+  border: none;
+  box-shadow: rgba(234, 244, 255, .2);
+  cursor: pointer;
+}
+
+.groceryList__input {
+  text-align: center;
+  padding: 15px 10px;
+  margin: 10px auto;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.groceryList__btn:focus,
+.groceryList__btn:hover {
+  opacity: .6;
+  transition: opacity .3s ease;
+}
