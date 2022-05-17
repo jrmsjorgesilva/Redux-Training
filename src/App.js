@@ -10,7 +10,9 @@ import Whatsapp from './Components/Whatsapp'
 import ColorPicker from './Components/ColorPicker'
 // IMPORTS DE RECURSOS DO REDUX
 import { Provider } from 'react-redux'
-import store from './Redux/Store'
+import Example from './Redux/FnRedux/Example'
+import store from './Redux/FnRedux/StoreExample'
+// import store from './Redux/Store'
 
 
 // COMPONENTE
@@ -19,6 +21,7 @@ const App = () => {
     <div className="App">
       <Provider store={store} >
         <Whatsapp />
+        <Example />
         <GroceryList />
         <Contador />
         <Calc />
