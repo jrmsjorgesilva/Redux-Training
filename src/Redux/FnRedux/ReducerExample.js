@@ -21,17 +21,17 @@ import actionTypes from './ActionExample'
 // }
 
 const initialState = {
-  counter: 'Escolha o Veiculo'
+  vehicle: 'Escolha o Veiculo'
 }
 
 function ReducerExample(state = initialState, action) {
   switch(action.type) {
     case actionTypes.car:
-      return { select: 'CARRO É MELHOR' }
+      return { vehicle: 'CARRO É MELHOR' }
     case actionTypes.bike:
-      return { select: 'BIKE É MELHOR' }
+      return { vehicle: 'BIKE É MELHOR' }
     default:
-      return { select: 'Escolha o Veiculo' }
+      return { vehicle: 'Escolha o Veiculo' }
   }
 }
 
