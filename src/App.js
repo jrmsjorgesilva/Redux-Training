@@ -9,14 +9,9 @@ import GroceryList from './Components/GroceryList'
 import Whatsapp from './Components/Whatsapp'
 import ColorPicker from './Components/ColorPicker'
 // IMPORTS DE RECURSOS DO REDUX
-import { createStore } from 'redux'
-import Reducer from './Redux/Reducer'
-import CalcReducer from './Redux/CalcReducer'
 import { Provider } from 'react-redux'
+import store from './Redux/Store'
 
-// store do redux
-const store = createStore(Reducer);
-// const store = createStore(CalcReducer);
 
 // COMPONENTE
 const App = () => {
@@ -24,10 +19,10 @@ const App = () => {
     <div className="App">
       <Provider store={store} >
         <Whatsapp />
-        <ColorPicker />
         <GroceryList />
         <Contador />
         <Calc />
+        <ColorPicker />
       </Provider>
     </div>
   );

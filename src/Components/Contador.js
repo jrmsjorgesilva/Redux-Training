@@ -5,6 +5,7 @@ import './Contador.css'
 // BIBLIOTECAS AUXILIARES IMPORT
 import { FaPlus, FaMinus, FaTrash } from 'react-icons/fa'
 import { connect } from 'react-redux'
+import { incrementAction, decrementAction, cleanAction } from '../Redux/Actions'
 
 // COMPONENTE
 const Contador = (props) => {
@@ -27,15 +28,15 @@ const Contador = (props) => {
   // GERENCIAMENTO DE ESTADO VIA REDUX
 
   const incrementaValor = () => {
-    props.dispatch({ type: 'INCREMENT_VALOR' });
+    props.dispatch(incrementAction(5));
   }
 
   const decrementaValor = () => {
-    props.dispatch({ type: 'DECREMENT_VALOR' });
+    props.dispatch(decrementAction(5));
   }
 
   const limpaValor = () => {
-    props.dispatch({ type: 'CLEAN_VALOR' });
+    props.dispatch(cleanAction());
   }
 
   return (

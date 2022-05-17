@@ -64,6 +64,7 @@ const GroceryList = () => {
 
   const deleteItem = (id) => {
     setGroceryList(groceryList.filter(elem => elem.id !== id));
+    localStorage.setItem('groceryListComponent', JSON.stringify(groceryList));
   }
 
   return (
