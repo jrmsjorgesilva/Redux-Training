@@ -1,15 +1,15 @@
 // CONSTANTES
-const SELECT_BLANK = 'SELECT_BLANK';
-const SELECT_FUNILARIA = 'SELECT_FUNILARIA';
-const SELECT_OLEO = 'SELECT_OLEO';
-const SELECT_PREVENT = 'SELECT_PREVENT';
+const SELECT_1 = 'SELECT_1';
+const SELECT_2 = 'SELECT_2';
+const SELECT_3 = 'SELECT_3';
+const SELECT_4 = 'SELECT_4';
 
 // Actions
-const actionTypes = {
-  select1: SELECT_BLANK,
-  select2: SELECT_FUNILARIA,
-  select3: SELECT_OLEO,
-  select4: SELECT_PREVENT
+const select = {
+  select1: SELECT_1,
+  select2: SELECT_2,
+  select3: SELECT_3,
+  select4: SELECT_4
 }
 
 // CONSTANTES
@@ -22,4 +22,5 @@ const vehicle = {
   bike: BIKE
 }
 
-export default vehicle
+// export default vehicle
+export default select

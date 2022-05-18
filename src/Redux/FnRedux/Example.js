@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 // COMPONENTE
 const Example = () => {
 
-  const [select, setSelect] = useState(() => 'Nenhum serviço selecionado');
+  // const [select, setSelect] = useState(() => 'Nenhum serviço selecionado');
 
   const counter = useSelector(state => state);
   const dispatch = useDispatch();
@@ -34,16 +34,16 @@ const Example = () => {
       </p>
       <select
         className='app__input'
-        value={select}
+        value={counter}
         onChange={(e) => dispatch({ type: e.target.value })}
       >
-        <option value='CAR' >Selecione um item</option>
-        <option value='BIKE' >Funilaria e Pintura</option>
-        <option value='CAR' >Troca de Óleo</option>
-        <option value='BIKE' >Manutenção Preventiva</option>
+        <option value='SELECT_1' >Selecione um item</option>
+        <option value='SELECT_2' >Funilaria e Pintura</option>
+        <option value='SELECT_3' >Troca de Óleo</option>
+        <option value='SELECT_4' >Manutenção Preventiva</option>
       </select>
       <p>
-        <span className='app__link'>{counter.vehicle}</span>
+        <span className='app__link'>{counter.select}</span>
       </p>
     </div>
   );
