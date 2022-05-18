@@ -10,7 +10,8 @@ import Whatsapp from './Components/Whatsapp'
 import ColorPicker from './Components/ColorPicker'
 // IMPORTS DE RECURSOS DO REDUX
 import { Provider } from 'react-redux'
-import Example from './Redux/FnRedux/Example'
+import ChooseService from './Redux/FnRedux/ChooseService'
+import ChooseVehicle from './Redux/FnRedux/ChooseVehicle'
 import store from './Redux/FnRedux/StoreExample'
 // import store from './Redux/Store'
 
@@ -21,7 +22,8 @@ const App = () => {
     <div className="App">
       <Provider store={store} >
         <Whatsapp />
-        <Example />
+        <ChooseService />
+        <ChooseVehicle />
         <GroceryList />
         <Contador />
         <Calc />

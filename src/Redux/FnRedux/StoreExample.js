@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux'
-import { ReducerExample, ReducerExampleVehicle } from './ReducerExample'
+import { ReducerChooseService, ReducerChooseVehicle } from './ReducerExample'
 
 // combined reducers
-const reducers = combineReducers({ ReducerExampleVehicle, ReducerExample });
+const reducers = combineReducers({ ReducerChooseService, ReducerChooseVehicle });
 
 // store do redux
 const store = createStore(reducers);

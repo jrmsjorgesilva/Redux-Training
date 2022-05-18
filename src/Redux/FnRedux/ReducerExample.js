@@ -2,10 +2,10 @@ import actionSelect from './ActionExampleSelect'
 import actionVehicle from './ActionExampleVehicle'
 
 const initialStateSelect = {
-  select: 'Selecione um item'
+  select: ''
 }
 
-export function ReducerExample(state = initialStateSelect, action) {
+export function ReducerChooseService(state = initialStateSelect, action) {
   switch(action.type) {
     case actionSelect.select1:
       return { select: 'Selecione um item' }
@@ -22,10 +22,10 @@ export function ReducerExample(state = initialStateSelect, action) {
 }
 
 const initialStateVehicle = {
-  vehicle: 'Escolha o Veiculo'
+  vehicle: ''
 }
 
-export function ReducerExampleVehicle(state = initialStateVehicle, action) {
+export function ReducerChooseVehicle(state = initialStateVehicle, action) {
   switch(action.type) {
     case actionVehicle.car:
       return { vehicle: 'CARRO É MELHOR' }
