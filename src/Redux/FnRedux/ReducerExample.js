@@ -1,38 +1,39 @@
-import actionTypes from './ActionExample'
+import actionSelect from './ActionExampleSelect'
+import actionVehicle from './ActionExampleVehicle'
 
-const initialState = {
+const initialStateSelect = {
   select: 'Selecione um item'
 }
 
-function ReducerExample(state = initialState, action) {
+export function ReducerExample(state = initialStateSelect, action) {
   switch(action.type) {
-    case actionTypes.select1:
-      return { select: 'Selecione um item lalalalallallallalll' }
-    case actionTypes.select2:
-      return { select: 'Funilaria e Pintura lalalalallallallalll' }
-    case actionTypes.select3:
-      return { select: 'Troca de Óleo lalalalallallallalll' }
-    case actionTypes.select4:
-      return { select: 'Manutenção Preventiva lalalalallallallalll' }
+    case actionSelect.select1:
+      return { select: 'Selecione um item' }
+    case actionSelect.select2:
+      return { select: 'Funilaria e Pintura' }
+    case actionSelect.select3:
+      return { select: 'Troca de Óleo' }
+    case actionSelect.select4:
+      return { select: 'Manutenção Preventiva' }
       break;
     default:
-      return { select: 'Selecione um item lalalalallallallalll' }
+      return { select: 'Selecione um item' }
   }
 }
 
-// const initialState = {
-//   vehicle: 'Escolha o Veiculo'
-// }
-//
-// function ReducerExample(state = initialState, action) {
-//   switch(action.type) {
-//     case actionTypes.car:
-//       return { vehicle: 'CARRO É MELHOR' }
-//     case actionTypes.bike:
-//       return { vehicle: 'BIKE É MELHOR' }
-//     default:
-//       return { vehicle: 'Escolha o Veiculo' }
-//   }
-// }
+const initialStateVehicle = {
+  vehicle: 'Escolha o Veiculo'
+}
 
-export default ReducerExample
+export function ReducerExampleVehicle(state = initialStateVehicle, action) {
+  switch(action.type) {
+    case actionVehicle.car:
+      return { vehicle: 'CARRO É MELHOR' }
+    case actionVehicle.bike:
+      return { vehicle: 'BIKE É MELHOR' }
+    default:
+      return { vehicle: 'Escolha o Veiculo' }
+  }
+}
+
+// export default ReducerExampleVehicle

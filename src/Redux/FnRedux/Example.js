@@ -10,13 +10,16 @@ const Example = () => {
 
   // const [select, setSelect] = useState(() => 'Nenhum serviço selecionado');
 
-  const counter = useSelector(state => state);
-  const dispatch = useDispatch();
-  console.log("New redux state use selector", counter);
+  // Use selector para variavel redux
+  const redux = useSelector(state => state);
+  console.log("New redux state use redux", redux);
 
-  // const select = useSelector(state => state);
-  // const dispatch = useDispatch();
-  // console.log("New redux state use selector", select);
+  // Use selector para variavel select
+  const select = useSelector(state => state);
+  console.log("New redux state use selector", select);
+
+  // variavel que guarda valor da função dispatch que aciona reducer
+  const dispatch = useDispatch();
 
   return (
     <div className="app__container">
@@ -24,7 +27,7 @@ const Example = () => {
       <div className='app__container'>
         <h1 className='app__link'>Escolha um veiculo</h1>
         <button className='app__btn' style={{ margin: '20px'}} onClick={() => dispatch({ type: 'CAR' })}>Car</button>
-        <span className='app__link'>{counter.vehicle}</span>
+        <span className='app__link'>{redux.ReducerExampleVehicle.vehicle}</span>
         <button className='app__btn' style={{ margin: '20px'}} onClick={() => dispatch({ type: 'BIKE' })}>Bike</button>
       </div>
       {/*FIM DO COMPONENTE EXAMPLE CAR -> BIKE*/}
@@ -34,7 +37,7 @@ const Example = () => {
       </p>
       <select
         className='app__input'
-        value={counter}
+        value={redux.ReducerExample.select}
         onChange={(e) => dispatch({ type: e.target.value })}
       >
         <option value='SELECT_1' >Selecione um item</option>
@@ -43,7 +46,7 @@ const Example = () => {
         <option value='SELECT_4' >Manutenção Preventiva</option>
       </select>
       <p>
-        <span className='app__link'>{counter.select}</span>
+        <span className='app__link'>{redux.ReducerExample.select}</span>
       </p>
     </div>
   );
